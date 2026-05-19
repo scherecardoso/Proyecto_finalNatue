@@ -34,16 +34,6 @@ header {
   height: 60px;
   z-index: 100;
   }
-
-
-
-
-
-
-
-
-
-  
 .natue {
   font-family: 'Playfair Display', serif;
   font-size: 13px;
@@ -55,42 +45,10 @@ nav {
   align-items: center;
   gap: 40px;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 nav ul {
   list-style: none;
   display: flex;
   gap: 25px;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   }
 nav a {
   text-decoration: none;
@@ -99,22 +57,6 @@ nav a {
   font-size: 15px;
   position: relative;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .iconos {
   display: flex;
   align-items: center;
@@ -154,22 +96,6 @@ nav a {
   cursor: pointer;
   display: block;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .menu-lateral a:hover{
   background: #ffdcec;
   color: #ff5ca8;
@@ -223,10 +149,6 @@ nav a {
     width: 300px;
     height: 140px;
 }
-
-
-
-
 .imagen-slide{
     position: absolute;
     width: 100%;
@@ -235,15 +157,9 @@ nav a {
     animation: cambiarImagen 9s infinite;
 }
 
-
-
-
 .imagen-slide:nth-child(1){
     animation-delay: 0s;
 }
-
-
-
 
 .imagen-slide:nth-child(2){
     animation-delay: 3s;
@@ -258,7 +174,6 @@ nav a {
   gap: 15px;
   margin-top: 20px;
   color: black;
- 
 }
 .accion {
   flex: 1;
@@ -290,14 +205,6 @@ nav a {
     align-items: center;
     justify-content: center;
 }
-
-
-
-
-
-
-
-
 .icono i {
     color: #ff5ca8;
     font-size: 20px;
@@ -377,61 +284,29 @@ nav a {
   font-weight: bold;
 }
 @keyframes cambiarImagen{
-
-
-
-
     0%{
         opacity: 0;
     }
-
-
-
-
     10%{
         opacity: 1;
     }
-
-
-
-
     45%{
         opacity: 1;
     }
-
-
-
-
     55%{
         opacity: 0;
     }
-
-
-
-
     100%{
         opacity: 0;
     }
 }
-
-
-
-
 @media (max-width: 768px) {
-
-
-
-
   body {
     grid-template-areas:
       "encabezado"
       "menu-lateral"
       "principal"
       "footer";
-
-
-
-
     grid-template-columns: 1fr;
     grid-template-rows: auto;
   }
@@ -439,78 +314,34 @@ nav a {
     position: relative;
     width: 100%;
     height: auto;
-
-
-
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-
-
-
     padding: 20px 10px;
     gap: 18px;
-
-
-
-
     background: #f5f5f5;
     border-bottom: 2px solid #ff5ca8;
-
-
-
-
     box-sizing: border-box;
   }
-
-
-
-
   .natue h1 {
     font-size: 42px;
     margin: 0;
   }
-
-
-
-
   nav ul {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-
-
-
-
     gap: 20px;
-
-
-
-
     padding: 0;
     margin: 0;
   }
-
-
-
-
   nav a {
     font-size: 15px;
   }
-
-
-
-
   .iconos {
     gap: 20px;
   }
-
-
-
-
   .iconos a {
     font-size: 20px;
   }
@@ -527,56 +358,28 @@ nav a {
     padding: 25px 15px;
     border-radius: 25px;
   }
-
-
-
-
   .contenido-bienvenida {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-
-
-
-
     gap: 20px;
   }
-
-
-
-
   .info-bienvenida {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-
-
-
     gap: 20px;
   }
-
-
-
-
   .texto-bienvenida h1 {
     margin: 0;
     font-size: 28px;
   }
-
-
-
-
   .texto-bienvenida p {
     font-size: 18px;
     line-height: 1.5;
     margin: 10px 0 0 0;
   }
-
-
-
-
   .imagen-bienvenida {
     width: 100%;
     max-width: 220px;
@@ -587,43 +390,23 @@ nav a {
   .acciones {
     padding: 10px;
   }
-
-
-
-
   .acciones h1 {
     text-align: center;
     font-size: 40px;
     margin-bottom: 20px;
   }
-
-
-
-
   .contenedor-acciones {
     display: flex;
     flex-direction: column;
     gap: 20px;
   }
-
-
-
-
   .accion {
     width: 100%;
     box-sizing: border-box;
-
-
-
-
     background: white;
     border-radius: 20px;
     padding: 20px;
   }
-
-
-
-
   .accion a {
     text-align: center;
     font-size: 26px;
@@ -649,10 +432,6 @@ nav a {
     height: auto;
     padding: 20px;
   }
-
-
-
-
   .redes {
     display: flex;
     justify-content: center;
@@ -664,15 +443,9 @@ nav a {
     height: 180px;
 }
 }
-
-
-
-
 </style>
 </head>
 <body>
-
-
 <header class="encabezado">
   <section class="natue"><h1>Natué</h1></section>
   <nav>
@@ -688,22 +461,6 @@ nav a {
    <a href="formulario.php"><i class="fa-solid fa-bag-shopping" style="margin-right: 20px;"></i></a>
   </section>
 </header>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <aside class="menu-lateral">
   <a class="menu-titulo"><h2>Menu Vendedor</h2></a>
   <a href=""><i class="fa-solid fa-house"></i> Registrar Ventas</a>
@@ -757,14 +514,6 @@ nav a {
     <a href="" style="color: #000000;">Historial de Ventas</a>
     <p><center>Consulta el historial de ventas realizadas</center></p>
   </section>
-
-
-
-
-
-
-
-
   <section class="accion">
     <div class="icono"><i class="fa-solid fa-chart-column"></i></div>
     <a href="" style="color: #000000;">Estado de Pedidos </a>
