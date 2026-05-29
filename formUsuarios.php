@@ -93,6 +93,26 @@ input[type="submit"]{
 
         </form>
     </div>
+    <script>
+        $("form").validate({
+            rules:{
+                CI:{
+                    required:true
+                }
+                nombre:{
+                    required:true
+                }
+            },
+            messages:{
+                CI:{
+                    required:"Este campo no puede ir vacio"
+                }
+                nombre:{
+                    required:"No puede estar sin un nombre"
+                }
+            }
+        });
+    </script>
 
 </body>
 </html>
