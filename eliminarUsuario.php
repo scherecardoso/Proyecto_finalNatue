@@ -10,17 +10,12 @@ if ($conn->connect_error) {
     die("Conexion fallida: " . $conn->connect_error);
 }
 
-$CI = $_POST['CI'];
-$nombre = $_POST['nombre'];
-$direccion = $_POST['direccion'];
-$celular = $_POST['celular'];
-$rol = $_POST['rol'];
-$estado = $_POST['estado'];
+$CI = $_GET['CI'];
 
-$sql = "UPDATE usuario SET nombre='$nombre', direccion='$direccion', celular='$celular', rol='$rol', estado='$estado' WHERE CI=$CI";
+$sql = "DELETE FROM usuario WHERE CI=$CI";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Usuario actualizado exitosamente";
+    echo "Usuario eliminado exitosamente";
     header("Location: readUsuario.php");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;

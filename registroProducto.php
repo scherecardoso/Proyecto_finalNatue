@@ -1,5 +1,5 @@
-<?php
-$servidor ="localhost";//Este archivo es para actualizar nuevos datos ingresados tras averlo editado
+ <?php
+$servidor ="localhost";
 $usuario ="root";
 $contra ="";
 $baseDeDatos ="DB_natue";
@@ -10,18 +10,15 @@ if ($conn->connect_error) {
     die("Conexion fallida: " . $conn->connect_error);
 }
 
-$idproductos = $_POST['idproductos'];
-$codigo = $_POST['codigo'];
+$codigo = $_POST['$codigo'];
 $nombre = $_POST['nombre'];
 $descripcion = $_POST['descripcion'];
 $precio = $_POST['precio'];
 $costo = $_POST['costo'];
 $stock = $_POST['stock'];
-
-$sql = "UPDATE productos SET codigo='$codigo', nombre='$nombre', descripcion='$descripcion', precio='$precio', costo='$costo', stock='$stock' WHERE idproductos=$idproductos";
-
+$sql = "INSERT INTO productos (codigo, nombre, descripcion, precio, costo, stock) VALUES ('$codigo','$nombre', '$descripcion', '$precio',  '$costo','$stock')";
 if ($conn->query($sql) === TRUE) {
-    echo "Producto actualizado exitosamente";
+    echo "Nuevo producto creado exitosamente";
     header("Location: readProducto.php");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;

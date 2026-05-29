@@ -17,10 +17,10 @@ $celular = $_POST['celular'];
 $rol = $_POST['rol'];
 $estado = $_POST['estado'];
 
-$sql = "UPDATE usuario SET nombre='$nombre', direccion='$direccion', celular='$celular', rol='$rol', estado='$estado' WHERE CI=$CI";
+$sql = "INSERT INTO usuario (CI, nombre, direccion, celular, rol, estado) VALUES ('$CI','$nombre', '$direccion', '$celular', '$rol','$estado')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Usuario actualizado exitosamente";
+    echo "Nuevo usuario creado exitosamente";
     header("Location: readUsuario.php");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
