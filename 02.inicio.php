@@ -24,12 +24,6 @@ body {
  gap: 10px;
 
 }
-
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 8cbc5ed91b670c07cd2e54265d9e8127b9f550b5
 header {
   grid-area: barra;
   background-color: #ffffffb5;
@@ -337,20 +331,17 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   
   }
 
   .iconos-barra {
     display: flex;
     flex-direction: row;
- 
   }
 
   .iconos-barra a {
       display: flex;
     flex-direction: row;
     gap: -100px;
-
   }
 
   .banner {
@@ -568,17 +559,9 @@ footer {
   }
 }
 
-
->>>>>>> 8cbc5ed91b670c07cd2e54265d9e8127b9f550b5
 </style>
 </head>
 <body>
-
-<<<<<<< HEAD
-    <header>
-=======
-<header>
->>>>>>> 8cbc5ed91b670c07cd2e54265d9e8127b9f550b5
   <div class="logo">
   <h1>Natué</h1>
   </div>
