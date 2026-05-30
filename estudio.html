@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maquetado</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+header{
+    background-color: lightblue;
+    padding: 30px;;
+    text-align:center;
+}
+.contenedor{
+    display:flex;
+    height: 540px;
+}
+nav{
+    background-color: lightgray;
+    width:250px;
+    padding: 50px;
+}
+main{
+    background-color: white;
+    width:70px;
+    padding:20px;
+}
+footer{
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+@media (max-width: 768px) {
+    .body{
+        font-size: 14px;
+        grid-template-areas: 
+        "header"
+        "nav"
+        "main"
+        "footer";
+    }
+      header{
+        width:430px;
+        height:80px;
+    }
+
+    .contenedor{
+        flex-direction: column;
+        width:430px;
+        height:auto;
+    }
+
+    nav{
+        width:430px;
+        height:150px;
+        padding: 22px;
+    }
+
+    main{
+        width:430px;
+        height:250px;
+        padding:10px;
+    }
+
+    footer{
+        width:430px;
+        height:80px;
+    }
+
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Mi Página Web</h1>
+</header>
+
+<section class="contenedor">
+
+    <nav>
+        <h2>Menú</h2>
+        <p>Inicio</p>
+        <p>Productos</p>
+        <p>Contacto</p>
+    </nav>
+
+    <main>
+        <h2>Contenido Principal</h2>
+        <p>Aquí va la información principal. </p>
+    </main>
+
+</section>
+
+<footer>
+    © 2026 Mi Página
+</footer>
+
+</body>
+</html>
