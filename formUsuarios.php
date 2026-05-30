@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.js"></script>
     <title></title>
 
     <style>
@@ -50,13 +52,13 @@ label{
 input{
     margin-bottom: 12px;
     padding: 10px;
-    border: 1px solid #e6e6e6;
+    border: 1px solid #f2c2d6;
     border-radius: 10px;
 }
 
 input[type="submit"]{
-    background: #ff6fa3;
-    color: white;
+    background: #f13077;
+    color: #ffffff;
     border: none;
     padding: 10px;
     font-weight: bold;
@@ -69,7 +71,7 @@ input[type="submit"]{
     <div class="contenedor">
         <h2>Crear Usuario</h2>
 
-        <form action="08.usuario.html" method="post">
+        <form action="08.usuario.php" method="post" id="formusuarios">
 
             <label>CI</label>
             <input type="number" name="CI" required>
@@ -81,7 +83,7 @@ input[type="submit"]{
             <input type="text" name="direccion" required>
 
             <label>Celular</label>
-            <input type="text" name="celular" required>
+            <input type="number" name="celular" required>
 
             <label>Rol</label>
             <input type="text" name="rol" required>
@@ -93,6 +95,61 @@ input[type="submit"]{
 
         </form>
     </div>
+
+   <script>
+        $(document).ready(function(){
+            $("#formusuarios").validate({
+                rules:{
+                    CI:{
+                        required: true,
+                        number: true,
+                        minlength: 8,
+                    },
+                    nombre:{
+                        required: true,
+                    },
+                    direccion:{
+                        required: true
+                    },
+                    celular:{
+                        required: true,
+                        number: true,
+                        minlength: 8
+                    },
+                    rol:{
+                        required: true
+                    },
+                    estado:{
+                        required: true
+                    }
+                },
+                messages:{
+                    CI:{
+                        required: "Este campo no puede ir vacio",
+                        number: "Solo se aceptan números",
+                        minlength: "El CI debe tener al menos 8 números"
+                    },
+                    nombre:{
+                        required: "El nombre de usuario es requerido"
+                    },
+                    direccion:{
+                        required: "Este campo no puede ir vacio"
+                    },
+                    celular:{
+                        required: "Este campo no puede ir vacio",
+                        number: "Solo se aceptan números",
+                        minlength: "El celular debe tener al menos 8 números"
+                    },
+                    rol:{
+                        required: "El campo es obligatorio"
+                    },
+                    estado:{
+                        required: "El campo es obligatorio"
+                    }
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
