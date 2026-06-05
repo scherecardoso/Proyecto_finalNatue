@@ -38,7 +38,7 @@ body{
     padding:40px;
     border-radius:30px;
     box-shadow:0 10px 30px rgba(0,0,0,0.08);
-    border:1px solid #ececec;
+    border:2px solid #f8c6e5;
 }
 
 .menu-registro{
@@ -76,21 +76,22 @@ form{
 input{
     width:100%;
     height:58px;
-    border:1px solid #e5e5e5;
+    color: #777;
+    border:1px solid #f5a3d5;
     border-radius:40px;
     display:flex;
     align-items:center;
-    padding:0 20px;
+    padding:20px;
     margin-bottom:18px;
     background:#fafafa;
 }
 
-.boton{
+button{
     width:100%;
     padding:16px;
-    border:none;
+    border:1px solid #f34bb3;
     border-radius:40px;
-    background:#d5ceca;
+    background:#f06ac3;
     color:white;
     font-size:17px;
     cursor:pointer;
@@ -98,16 +99,9 @@ input{
     transition:0.3s;
 }
 
-.boton:hover{
-    background:#c2bab5;
-}
-
-label.error{
-    color:#f13077;
-    font-size:13px;
-    margin-top:-8px;
-    margin-bottom:10px;
-    margin-left:15px;
+button:hover{
+    transform: scale(1.03);
+    background:#f765c6;
 }
 
 @media(max-width:768px){
@@ -126,6 +120,18 @@ label.error{
         height:54px;
     }
 
+}
+
+label.error{
+    color:#a01045;
+    font-size:13px;
+   
+    margin-bottom:10px;
+    margin-left:15px;
+}
+
+input.error{
+    border:1px solid #a01045;
 }
 
 </style>
@@ -158,7 +164,7 @@ label.error{
 
         <input type="text" name="estado" placeholder="Estado" required>
 
-        <input type="submit" value="Guardar Usuario" class="boton">
+        <button>Guardar usuario</button>
 
     </form>
 
@@ -223,7 +229,6 @@ $(document).ready(function(){
     });
 
 });
-
 </script>
 
 </body>
