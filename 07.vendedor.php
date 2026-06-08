@@ -34,6 +34,7 @@ header {
   height: 60px;
   z-index: 100;
   }
+<<<<<<< HEAD
 
 
 
@@ -44,6 +45,8 @@ header {
 
 
   
+=======
+>>>>>>> a07ee6b2fbb97895e0535275bd1c72f6d21947e2
 .natue {
   font-family: 'Playfair Display', serif;
   font-size: 13px;
@@ -55,6 +58,7 @@ nav {
   align-items: center;
   gap: 40px;
   }
+<<<<<<< HEAD
 
 
 
@@ -71,10 +75,13 @@ nav {
 
 
 
+=======
+>>>>>>> a07ee6b2fbb97895e0535275bd1c72f6d21947e2
 nav ul {
   list-style: none;
   display: flex;
   gap: 25px;
+<<<<<<< HEAD
 
 
 
@@ -91,6 +98,8 @@ nav ul {
 
 
 
+=======
+>>>>>>> a07ee6b2fbb97895e0535275bd1c72f6d21947e2
   }
 nav a {
   text-decoration: none;
@@ -99,6 +108,7 @@ nav a {
   font-size: 15px;
   position: relative;
   }
+<<<<<<< HEAD
 
 
 
@@ -115,6 +125,8 @@ nav a {
 
 
 
+=======
+>>>>>>> a07ee6b2fbb97895e0535275bd1c72f6d21947e2
 .iconos {
   display: flex;
   align-items: center;
