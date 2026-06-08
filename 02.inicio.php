@@ -24,10 +24,6 @@ body {
  gap: 10px;
 
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> a07ee6b2fbb97895e0535275bd1c72f6d21947e2
 header {
   grid-area: barra;
   background-color: #ffffffb5;
@@ -322,10 +318,6 @@ footer {
 }
 
 
-
-
-<<<<<<< HEAD
-<<<<<<< HEAD
 @media (max-width: 768px) {
 
   header {
@@ -375,9 +367,7 @@ footer {
   height: 150px;
   object-fit: contain;
 }}
-=======
-=======
->>>>>>> a07ee6b2fbb97895e0535275bd1c72f6d21947e2
+
 
 
 
@@ -566,18 +556,12 @@ footer {
   }
 }
 
-<<<<<<< HEAD
-</style>
-</head>
-<body>
-=======
 
 </style>
-</head>
+
 <body>
 
 <header>
->>>>>>> a07ee6b2fbb97895e0535275bd1c72f6d21947e2
   <div class="logo">
   <h1>Natué</h1>
   </div>
@@ -681,16 +665,5 @@ footer {
 </footer>
 
 </body>
-<<<<<<< HEAD
-<<<<<<< HEAD
-</html>
-=======
 </html>
 
-
->>>>>>> 8cbc5ed91b670c07cd2e54265d9e8127b9f550b5
-=======
-</html>
-
-
->>>>>>> a07ee6b2fbb97895e0535275bd1c72f6d21947e2
