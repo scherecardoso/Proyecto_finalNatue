@@ -8,10 +8,10 @@
 <body>
     <form action="autenticar.php" method="post" id="formusuarios">
 
-            <label>Nombre: </label>
+            <label>Nombre de Usuario : </label>
             <input type="text" name="nombre" required>
 
-            <label>Apellido: </label>
+            <label> Contraseña : </label>
             <input type="text" name="apellido" required>
 
 

@@ -1,9 +1,8 @@
 <?php
-    
 $servidor ="localhost";
 $usuario ="root";
 $contra ="";
-$baseDeDatos ="natue";
+$baseDeDatos ="DB_natue";
 
 $conn = new mysqli($servidor, $usuario, $contra, $baseDeDatos);
 if ($conn->connect_error) {
@@ -11,8 +10,8 @@ if ($conn->connect_error) {
 }
 
 $nombre = $_POST['nombre'];
-$apellido = $_POST['apellido'];
-$sql = "SELECT * FROM usuario WHERE nombre='$nombre' AND apellido='$apellido'";
+$contraseña = $_POST['contrseña'];
+$sql = "SELECT * FROM usuario WHERE nombre='$nombre' AND contraseña='$contraseña'";
 $resultado = $conn->query($sql);
 if($resultado->num_rows > 0){
     while($fila = $resultado->fetch_assoc()){
