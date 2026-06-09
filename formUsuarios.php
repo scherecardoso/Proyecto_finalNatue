@@ -1,7 +1,7 @@
 <?php
 session_start();
 if ($_SESSION['user']==null){
-    header("location:Ejlogin.php");
+    header("location: logUser.php.php");
 }
 ?>
 
