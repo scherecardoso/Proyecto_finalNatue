@@ -1,3 +1,11 @@
+<?php
+session_start();
+if ($_SESSION['user']==null){
+    header("location: logUser.php.php");
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
