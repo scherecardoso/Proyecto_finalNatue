@@ -2,7 +2,7 @@
 $servidor ="localhost";
 $usuario ="root";
 $contra ="";
-$baseDeDatos ="DB_natue";
+$baseDeDatos ="db_natue";
 
 $conn = new mysqli($servidor, $usuario, $contra, $baseDeDatos);
 if ($conn->connect_error) {
@@ -18,7 +18,7 @@ if($resultado->num_rows > 0){
         session_start();
         $_SESSION['id'] = $fila['id'];
         $_SESSION['nombre'] = $fila['nombre'];
-        header("Location: inicio2.php");
+        header("Location: 02.inicio.php");
     }
 }else{
     echo "credenciales incorrectas";

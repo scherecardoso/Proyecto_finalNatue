@@ -3,7 +3,7 @@
 $servidor ="localhost";
 $usuario ="root";
 $contra ="";
-$baseDeDatos ="natue";
+$baseDeDatos ="db_natue";
 
 $conn = new mysqli($servidor, $usuario, $contra, $baseDeDatos);
 
