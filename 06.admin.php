@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Quicksand:wght@400;500&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Quicksand:wght@400;500&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
+  
 <style>
+
+  
 body {
     display: grid;
     margin: 0;
@@ -36,7 +38,6 @@ header {
     position: sticky;
     height: 60px;
     z-index: 100;
-    border-bottom: 2.5px solid #ff5ca8;
 }
 
 .logo {
@@ -183,7 +184,7 @@ nav a.activo:after {
     display: flex;
     gap: 10px;
     margin-top: 250px;
-    margin-left: 185px;
+    margin-left: 175px;
 }
 
 .card {
@@ -236,7 +237,7 @@ nav a.activo:after {
     grid-template-columns: 1fr 1fr;
     gap: 25px;
     margin-top: 560px;
-    margin-left: 186px;
+    margin-left: 177px;
     position: absolute;
 }
 
@@ -282,60 +283,63 @@ nav a.activo:after {
     gap: 20px;
     padding: 10px;
     margin-top: 30px;
-    margin-left: 1300px;
+    margin-left: 1270px;
     border-radius: 25%;
     position: absolute;
 }
 
 .acciones {
     background: #ffffff;
-    width: 400px;
+    width: 290px;
     height: 320px;
     border-radius: 35px;
     box-shadow: 0 5px 18px rgba(0,0,0,0.05);
     border: 1px solid #efefef;
     display: flex;
-    align-items: start;
-    justify-content: center;
-    padding-top: 30px;
-    color: #ff78b8;
-    font-size: 28px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 25px;
 }
 
 .resumen-sistema {
     background: #ffffff;
-    width: 400px;
+    width: 290px;
     height: 320px;
     border-radius: 35px;
     box-shadow: 0 5px 18px rgba(0,0,0,0.05);
     border: 1px solid #efefef;
+
     display: flex;
-    align-items: start;
-    justify-content: center;
-    padding-top: 30px;
-    color: #ff78b8;
-    font-size: 28px;
+    flex-direction: column;
+
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    padding: 25px;
 }
 
 .actividad {
     background: #ffffff;
-    width: 400px;
+    width: 290px;
     height: 320px;
     border-radius: 35px;
     box-shadow: 0 5px 18px rgba(0,0,0,0.05);
     border: 1px solid #efefef;
+
     display: flex;
-    align-items: start;
-    justify-content: center;
-    padding-top: 30px;
-    color: #ff78b8;
-    font-size: 28px;
+    flex-direction: column;
+
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    padding: 25px;
 }
 
-.titulo-box{
+.titulo-caja{
   color:#ff78b8;
   font-size:28px;
-  margin:20px 30px;
+  margin-bottom:20px;
 }
 
 
@@ -416,111 +420,85 @@ div{
   color: #000;
 }
 
-
 @media (max-width: 768px) {
 
-body {
-    grid-template-areas:
-        "barra"
-        "info"
-        "act";
+  body{
     grid-template-columns: 1fr;
-}
+    grid-template-rows: auto;
+    grid-template-areas:
+      "barra"
+      "info";
+  }
 
-.menu {
+  header {
+    padding: 20px;
+    gap: 0px;
+    height: 130px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+  }
+
+  nav {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .menu,
+  .act {
     display: none;
-}
+  }
 
-.bienvenida {
+
+  .bienvenida {
     position: static;
-    width:80%;
-    height: 50%;
-    padding: 50px;
-    border-radius: 20px;
-    margin: 0 auto;
-    gap: 40px;
-    margin-bottom:20px;
-    margin-right: 20px;
-}
+    width: 90%;
+    height: auto;
+    margin: 20px auto;
+  
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
 
-.circulo {
-    width: 190px;
-    height: 115px;
+  .circulo {
+    width: 120px;
+    height: 120px;
+  }
 
-}
+  .cards {
+    margin: 20px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
+  .card {
+    width: 45%;
+  }
 
-
-.cards {
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-
-}
-
-.card {
-    width: 100%;
-    height: 110px;
-    border-radius: 20px;
-    height: 130px;
-
-}
-
-.contenido {
-    position: static;
-    margin: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-}
-
-.resumen {
-    width: 100%;
-    height: 200px;
-    border-radius: 20px;
-}
-
-.pedidos {
-    width: 100%;
-    height: 200px;
-    border-radius: 20px;
-}
-
-.act {
+  .contenido {
     position: static;
     margin: 20px 0;
-    padding: 10px;
-    gap: 15px;
-}
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 
-.acciones {
+  .resumen,
+  .pedidos {
     width: 100%;
-    height: 220px;
-    border-radius: 20px;
-}
-
-.resumen-sistema {
-    width: 100%;
-    height: 220px;
-    border-radius: 20px;
-}
+    height: auto;
+  }
 
 }
-
-
-
-
-
 </style>
 </head>
 <body>
 
 <header>
-    <div class="logo">
-    <h1>Natué</h1>
-    </div>
-
+    <div class="logo"><h1>Natué</h1></div>
 
 <nav>
     <ul>
@@ -532,100 +510,47 @@ body {
 </nav>
 
 
-    <div class="iconos-barra">
+  <div class="iconos-barra">
     <a href="formUsuarios.php"><i class="fa-solid fa-user"></i> <span style="font-size:14px; margin-left:5px;"></span></a>
     <a href="formProductos.php"><i class="fa-solid fa-bag-shopping"></i></a>
-    </div>
+  </div>
 </header>
 
 
 <aside class="menu">
     <div class="titulo-menu">MENU ADMINISTRADOR</div>
-    <div><i class="fa-solid fa-house"></i> Dashboard</div>
-    <a href="readUsuario.php">
-    <div><i class="fa-solid fa-users"></i> Gestión de Usuarios</div>
-    </a>
+    <div><i class="fa-solid fa-house"></i> Inicio</div>
+    <a href="readUsuario.php"><div><i class="fa-solid fa-users"></i> Gestión de Usuarios</div></a>
     <div><i class="fa-solid fa-shield-halved"></i> Roles y Permisos</div>
     <div><i class="fa-solid fa-box"></i> Gestión de Productos</div>
     <div><i class="fa-solid fa-chart-line"></i> Reportes</div>
-    <a href="readProducto.php">
-    <div><i class="fa-solid fa-cart-shopping"></i> Ventas y Pedidos</div>
-    </a>
+    <a href="readProducto.php"><div><i class="fa-solid fa-cart-shopping"></i> Ventas y Pedidos</div></a>
     <div><i class="fa-solid fa-gear"></i> Configuración</div>
     <div><i class="fa-solid fa-clock-rotate-left"></i> Actividad</div>
     <div><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</div>
 </aside>
 
 <main class="info">
-    <seccion class="bienvenida">
-    <div class="circulo">
-    <img src="sheshe.png" alt="">
-    </div>
-
-    <div class="texto">
-    <h2>BIENVENIDO</h2>
-    <p>Desde aquí puedes administrar y supervisar 
-        todas las operaciones del sistema</p>
-    </div>
-    </seccion>
-
+    <seccion class="bienvenida"><div class="circulo"><img src="./img/sheshe.png" alt=""></div>
+    <div class="texto"><h2>BIENVENIDO</h2><p>Desde aquí puedes administrar y supervisar todas las operaciones del sistema</p></div></seccion>
 
 
 <seccion class="cards">
-    <article class="card">
-    <div class="icono"><i class="fa-solid fa-users"></i></div>
-    <h3>24</h3>
-    <p>Usuarios Registrados</p>
-    </article>
-
-    <article class="card">
-    <div class="icono"><i class="fa-solid fa-shield"></i></div>
-    <h3>2</h3>
-    <p>Roles Activos</p>
-    </article>
-
-    <article class="card">
-    <div class="icono"><i class="fa-solid fa-box"></i></div>
-    <h3>156</h3>
-    <p>Productos Registrados</p>
-    </article>
-
-    <article class="card">
-    <div class="icono"><i class="fa-solid fa-cart-shopping"></i></div>
-    <h3>128</h3>
-    <p>Pedidos este mes</p>
-    </article>
-
-    <article class="card">
-    <div class="icono"><i class="fa-solid fa-dollar-sign"></i></div>
-    <h3>$3.805</h3>
-    <p>Ventas este mes</p>
-    </article>
+    <article class="card"><div class="icono"><i class="fa-solid fa-users"></i></div><h3>24</h3><p>Usuarios Registrados</p></article>
+    <article class="card"><div class="icono"><i class="fa-solid fa-shield"></i></div><h3>2</h3><p>Roles Activos</p></article>
+    <article class="card"><div class="icono"><i class="fa-solid fa-box"></i></div><h3>156</h3><p>Productos Registrados</p></article>
+    <article class="card"><div class="icono"><i class="fa-solid fa-cart-shopping"></i></div><h3>128</h3><p>Pedidos este mes</p></article>
+    <article class="card"><div class="icono"><i class="fa-solid fa-dollar-sign"></i></div><h3>$3.805</h3><p>Ventas este mes</p></article>
 </seccion>
 
 
 <section class="contenido">
-
-
-
   <section class="resumen">
+  <h3 class="titulo-caja">RESUMEN DE VENTAS</h3>
+</section>
 
-    <h3 class="titulo-box">
-      RESUMEN DE VENTAS
-    </h3>
-
-  </section>
-
-
-
-  <section class="pedidos">
-
-    <h3 class="titulo-box">
-      PEDIDOS RECIENTES
-    </h3>
-
-    <table class="tabla-pedidos">
-
+<section class="pedidos"><h3 class="titulo-caja">PEDIDOS RECIENTES</h3>
+  <table class="tabla-pedidos">
       <tr>
         <th>Pedido</th>
         <th>Cliente</th>
@@ -660,117 +585,40 @@ body {
         <td>31/05/25</td>
         <td>En proceso</td>
       </tr>
-
     </table>
-
   </section>
-
 </section>
 
 
 <aside class="act">
-
-
-
-  <section class="acciones">
-
-    <h3 class="titulo-box">
-      ACCIONES RAPIDAS
-    </h3>
-
-    <ul class="lista-acciones">
-
-      <li>
-        <i class="fa-solid fa-user-plus"></i>
-        Crear Usuario
-      </li>
-
-      <li>
-        <i class="fa-solid fa-shield-halved"></i>
-        Asignar Rol
-      </li>
-
-      <li>
-        <i class="fa-solid fa-box"></i>
-        Registrar Producto
-      </li>
-
-      <li>
-        <i class="fa-solid fa-chart-column"></i>
-        Ver Reportes
-      </li>
-
-    </ul>
-
+  <section class="acciones"><h3 class="titulo-caja">ACCIONES RAPIDAS</h3>
+  <ul class="lista-acciones">
+    <li><i class="fa-solid fa-user-plus"></i>Crear Usuario</li>
+    <li><i class="fa-solid fa-shield-halved"></i>Asignar Rol</li>
+    <li><i class="fa-solid fa-box"></i>Registrar Producto</li>
+    <li><i class="fa-solid fa-chart-column"></i>Ver Reportes</li>
+  </ul>
   </section>
 
-
   <section class="resumen-sistema">
-
-    <h3 class="titulo-box">
-      RESUMEN DEL SISTEMA
-    </h3>
-
+    <h3 class="titulo-caja">RESUMEN DEL SISTEMA</h3>
     <ul class="lista-sistema">
-
-      <li>
-        <span>Usuarios activos</span>
-        <strong>18</strong>
-      </li>
-
-      <li>
-        <span>Productos activos</span>
-        <strong>156</strong>
-      </li>
-
-      <li>
-        <span>Pedidos este mes</span>
-        <strong>128</strong>
-      </li>
-
-      <li>
-        <span>Ventas este mes</span>
-        <strong>$3.850</strong>
-      </li>
-
-    </ul>
-
+    <li><span>Usuarios activos</span><strong>18</strong></li>
+    <li><span>Productos activos</span><strong>156</strong></li>
+    <li><span>Pedidos este mes</span><strong>128</strong></li>
+    <li><span>Ventas este mes</span><strong>$3.850</strong></li></ul>
   </section>
 
  
-
   <section class="actividad">
-
-    <h3 class="titulo-box">
-      ACTIVIDAD RECIENTE
-    </h3>
-
+    <h3 class="titulo-caja">ACTIVIDAD RECIENTE</h3>
     <ul class="lista-actividad">
-
-      <li>
-        <i class="fa-solid fa-user"></i>
-        Nuevo usuario creado
-      </li>
-
-      <li>
-        <i class="fa-solid fa-box"></i>
-        Producto registrado
-      </li>
-
-      <li>
-        <i class="fa-solid fa-cart-shopping"></i>
-        Pedido actualizado
-      </li>
-
-      <li>
-        <i class="fa-solid fa-chart-line"></i>
-        Reporte generado
-      </li>
-
+      <li><i class="fa-solid fa-user"></i>Nuevo usuario creado</li>
+      <li><i class="fa-solid fa-box"></i>Producto registrado</li>
+      <li><i class="fa-solid fa-cart-shopping"></i>Pedido actualizado</li>
+      <li><i class="fa-solid fa-chart-line"></i>Reporte generado</li>
     </ul>
-
   </section>
-
 </aside>
 
 

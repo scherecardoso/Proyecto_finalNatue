@@ -1,841 +1,611 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Quicksand:wght@400;500&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
-<title>Maquetado Vendedor</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Natué Dashboard Premium</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+
 <style>
-body {
-  display: grid;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  grid-template-areas:
-    "encabezado encabezado"
-    "menu-lateral principal"
-    "footer footer";
-  grid-template-columns: 320px 1fr;
-  grid-template-rows: 70px 1fr 70px;
-  min-height: 100vh;
-  gap: 5px;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
-header {
-  grid-area: encabezado;
-  background-color: #ffffffb5;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 60px;
-  top: 0;
-  position: sticky;
-  height: 60px;
-  z-index: 100;
+body{
+  font-family:'Poppins',sans-serif;
+  background:rgba(255,255,255,.95);
+  color:#262626;
+}
+.header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:85px;
+  background:linear-gradient(white, pink);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:28px;
+  z-index:3;
+}
+.logo{
+  font-size:2rem;
+  font-weight:700;
+  color:#ff4f93;
+}
+.nav{
+  display:flex;
+  align-items:center;
+  gap:35px;
+}
+.nav a{
+  text-decoration:none;
+  color:#444;
+  font-weight:500;
+  position:relative;
+}
+.icons{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+.icons a{
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#ff4f93;
+  transition: .3s; 
+}
+.icons a:hover{
+  background:#ff4f93;
+  color:white;
+  transform:translateY(-3px);
+}
+.pepcuerpo{
+  display:grid;
+  grid-template-columns:290px 1fr;
+  gap:25px;
+  padding:115px 25px 25px;
+}
+.sidebar{
+  background:rgba(255,255,255,.95);
+  border-radius:30px;
+  padding:25px;
+  box-shadow:0 10px 30px rgba(0,0,0,.05);
+  height:calc(100vh - 140px);
+  position:sticky;
+  top:105px;
+}
+.sidebar-title{
+  color:#ff4f93;
+  font-size:1.3rem;
+  font-weight:700;
+  margin-bottom:25px;
+}
+.sidebar-links{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.sidebar-links a{
+  text-decoration:none;
+  color:#444;
+  padding:16px;
+  border-radius:18px;
+  transition:.3s;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  font-weight:500;
+}
+.sidebar-links a:hover{
+  background:#fff0f6;
+  color:#ff4f93;
+  transform:translateX(6px);
+}
+.logout{
+  margin-top:15px;
+  background:#fff5f8;
+}
+.main{
+  display:flex;
+  flex-direction:column;
+  gap:25px;
+}
+.hero{
+  background:linear-gradient(135deg,#ff4f93,#ff9fc0);
+  border-radius:35px;
+  padding:35px;
+  color:white;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 15px 40px rgba(255,79,147,.18);
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  width:350px;
+  height:350px;
+  border-radius:50%;
+  background:rgba(255,255,255,.12);
+  top:-120px;
+  right:-100px;
+}
+.hero-content{
+  position:relative;
+  z-index:2;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:30px;
+  flex-wrap:wrap;
+}
+.hero-left{
+  display:flex;
+  align-items:center;
+  gap:25px;
+}
+.profile-icon{
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  background:rgba(255,255,255,.2);
+  border:2px solid rgba(255,255,255,.4);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:3rem;
+}
+.hero-text h1{
+  font-size:2.5rem;
+  margin-bottom:10px;
+}
+.hero-text p{
+  line-height:1.7;
+  max-width:500px;
+}
+.slider{
+  position:relative;
+  width:320px;
+  height:210px;
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+.slide{
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+}
+.section-title{
+  font-size:1.8rem;
+  color:#444;
+}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:20px;
+}
+.card{
+  background:rgba(255,255,255,.95);
+  border-radius:28px;
+  padding:25px;
+  box-shadow:0 10px 30px rgba(0,0,0,.05);
+  transition:.35s;
+}
+.card:hover{
+  transform:translateY(-8px);
+}
+.card-icon{
+  width:70px;
+  height:70px;
+  border-radius:20px;
+  background:#fff0f6;
+  color:#ff4f93;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:28px;
+  margin-bottom:18px;
+}
+.card h3{
+  margin-bottom:10px;
+}
+.card p{
+  color:#777;
+  line-height:1.6;
+}
+.menu-toggle{
+  width:48px;
+  height:48px;
+  border-radius:14px;
+  background:white;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+  transition:.3s;
+  box-shadow:0 5px 15px rgba(0,0,0,.06);
+}
+.menu-toggle span{
+  width:24px;
+  height:3px;
+  background:#ff4f93;
+  border-radius:20px;
+  transition:.3s;
+}
+.pepe-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:20px;
+}
+.orders,
+.quick-box{
+  background:rgba(255,255,255,.95);
+  border-radius:28px;
+  padding:25px;
+  box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+.orders-header h2,
+.quick-box h2{
+  color:#ff4f93;
+  margin-bottom:20px;
+}
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+th{
+  padding:15px;
+  text-align:left;
+  background:#fff0f6;
+  color:#ff4f93;
+}
+td{
+  padding:15px;
+  border-bottom:1px solid #f2f2f2;
+}
+.status{
+  padding:8px 15px;
+  border-radius:30px;
+  font-size:.8rem;
+  font-weight:600;
+}
+.done{
+  background:#dfffe9;
+  color:#1f9b51;
+}
+.pending{
+  background:#ffe7f1;
+  color:#ff4f93;
+}
+.quick{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+.quick-btn{
+  width:100%;
+  height:70px;
+  border:none;
+  border-radius:20px;
+  background:#fff0f6;
+  color:#ff4f93;
+  font-size:1rem;
+  font-weight:600;
+  cursor:pointer;
+  margin-bottom:15px;
+  transition:.3s;
+}
+.quick-btn:hover{
+  background:#ff4f93;
+  color:white;
+  transform:scale(1.03);
+}
+.footer{
+  background:rgba(255,255,255,.95);
+  padding:35px;
+  border-radius:30px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.04);
+}
+.footer h3{
+  color:#ff4f93;
+  margin-bottom:20px;
+}
+.socials{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
+}
+.socials a{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-decoration:none;
+  color:#ff4f93;
+  transition:.3s;
+  box-shadow:0 5px 15px rgba(0,0,0,.05);
+}
+.socials a:hover{
+  background:#ff4f93;
+  color:white;
+  transform:translateY(-5px);
+}
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.35);
+  opacity:0;
+  visibility:hidden;
+  transition:.3s;
+  z-index:997;
+}
+.overlay.active{
+  opacity:1;
+  visibility:visible;
+}
+@media(max-width:1100px){
+  .pepe-grid{
+    grid-template-columns:1fr;
   }
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-
-  
-=======
->>>>>>> a07ee6b2fbb97895e0535275bd1c72f6d21947e2
-.natue {
-  font-family: 'Playfair Display', serif;
-  font-size: 13px;
-  color: #000000;
-  margin: 0;
 }
-nav {
-  display: flex;
-  align-items: center;
-  gap: 40px;
+@media(max-width:900px){
+  .pepcuerpo{
+    grid-template-columns:1fr;
   }
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
->>>>>>> a07ee6b2fbb97895e0535275bd1c72f6d21947e2
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
->>>>>>> a07ee6b2fbb97895e0535275bd1c72f6d21947e2
+  .menu-toggle{
+    display:flex;
   }
-nav a {
-  text-decoration: none;
-  color: #2b2b2b;
-  font-weight: 500px;
-  font-size: 15px;
-  position: relative;
+  .nav{
+    display:none;
   }
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
->>>>>>> a07ee6b2fbb97895e0535275bd1c72f6d21947e2
-.iconos {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-}
-.iconos a {
-  color: #2b2b2b;
-  text-decoration: none;
-  font-size: 18px;
-  position: relative;
-}
-.menu-lateral {
-   grid-area: menu-lateral;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  background-color: #ffffff;
-  padding: 15px;
-  margin-top: 27px;
-  width: 280px;
-  border-right: 1px solid #ececec;
- 
-}
-.menu-titulo {
-  font-size: 15px;
-  color: #ff5ca8;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
-.menu-lateral a{
-  text-decoration: none;
-  color: black;
-  padding: 15px;
-  border-radius: 12px;
-  font-size: 20px;
-  transition: .3s;
-  cursor: pointer;
-  display: block;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.menu-lateral a:hover{
-  background: #ffdcec;
-  color: #ff5ca8;
-  padding-left: 22px;
-}
-.principal {
-  grid-area: principal;
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin-top: 80px;
-}
-.bienvenida {
-  height: 140px;
-  padding: 20px;
-  background: #fdeff6;
-  border-radius: 33px;
-}
-.contenido-bienvenida {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.info-bienvenida {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-}
-.icono-bienvenida {
-  width: 90px;
-  height: 90px;
-  border: 3px solid pink;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 50px;
-}
-.texto-bienvenida {
-  display: flex;
-  flex-direction: column;
-}
-.imagen-bienvenida {
-  width: 300px;
-  height: 140px;
-  margin-left: 20px;
-}
-.slider-bienvenida{
-    position: relative;
-    width: 300px;
-    height: 140px;
-}
-
-
-
-
-.imagen-slide{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    animation: cambiarImagen 9s infinite;
-}
-
-
-
-
-.imagen-slide:nth-child(1){
-    animation-delay: 0s;
-}
-
-
-
-
-.imagen-slide:nth-child(2){
-    animation-delay: 3s;
-}
-.acciones {
-  padding: 20px;
-  border-radius: 20%;
-  color: #ff5ca8;
-}
-.contenedor-acciones {
-  display: flex;
-  gap: 15px;
-  margin-top: 20px;
-  color: black;
- 
-}
-.accion {
-  flex: 1;
-  border-radius: 20%;
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: 0.3s;
-  color: black;
-}
-.accion:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(212, 76, 76, 0.2);
-}
-.accion a {
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 20px;
-  margin-top: 10px;
-}
-.icono {
-    width: 50px;
-    height: 50px;
-    background: #ffdcec;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-
-
-
-
-
-
-.icono i {
-    color: #ff5ca8;
-    font-size: 20px;
-}
-.contenido {
-  display: flex;
-  gap: 10px;
-}
-.pedidos {
-  flex: 2.3;
-}
-.encabezado-pedidos {
-  height: 60px;
-  background-color: #ffe4ec;
-  border-radius: 15px 15px 0px 0px;
-  display: flex;
-  align-items: center;
-  padding-left: 20px;
-}
-.encabezado-pedidos a {
-  text-decoration: none;
-  color: #d87093;
-}
-.tabla-pedidos {
-  height: 250px;
-  background-color: white;
-  border-radius: 0px 0px 15px 15px;
-  padding: 20px;
-}
-.acceso-rapido {
-  flex: 1;
-}
-.encabezado-acceso {
-  height: 60px;
-  background-color: #ff5c93;
-  color: white;
-  border-radius: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.boton-acceso {
-  height: 70px;
-  background-color: #ffe4ec;
-  border-radius: 15px;
-  margin-top: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.3s;
-}
-.boton-acceso:hover {
-  background-color: pink;
-}
-.boton-acceso a {
-  text-decoration: none;
-  color: #d87093;
-  font-weight: bold;
-}
-.footer {
-  grid-area: footer;
-  background: linear-gradient(white, pink);
-  height: 90px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.redes {
-  display: flex;
-  gap: 20px;
-}
-.redes a {
-  text-decoration: none;
-  color: #d87093;
-  font-weight: bold;
-}
-@keyframes cambiarImagen{
-
-
-
-
-    0%{
-        opacity: 0;
-    }
-
-
-
-
-    10%{
-        opacity: 1;
-    }
-
-
-
-
-    45%{
-        opacity: 1;
-    }
-
-
-
-
-    55%{
-        opacity: 0;
-    }
-
-
-
-
-    100%{
-        opacity: 0;
-    }
-}
-
-
-
-
-@media (max-width: 768px) {
-
-
-
-
-  body {
-    grid-template-areas:
-      "encabezado"
-      "menu-lateral"
-      "principal"
-      "footer";
-
-
-
-
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
+  .sidebar{
+    position:fixed;
+    top:0;
+    left:-320px;
+    width:290px;
+    height:100vh;
+    z-index:9998;
+    transition:.4s ease;
+    border-radius:0 30px 30px 0;
   }
-  .encabezado {
-    position: relative;
-    width: 100%;
-    height: auto;
-
-
-
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-
-
-
-    padding: 20px 10px;
-    gap: 18px;
-
-
-
-
-    background: #f5f5f5;
-    border-bottom: 2px solid #ff5ca8;
-
-
-
-
-    box-sizing: border-box;
+  .sidebar.active{
+    left:0;
   }
-
-
-
-
-  .natue h1 {
-    font-size: 42px;
-    margin: 0;
-  }
-
-
-
-
-  nav ul {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-
-
-
-
-    gap: 20px;
-
-
-
-
-    padding: 0;
-    margin: 0;
-  }
-
-
-
-
-  nav a {
-    font-size: 15px;
-  }
-
-
-
-
-  .iconos {
-    gap: 20px;
-  }
-
-
-
-
-  .iconos a {
-    font-size: 20px;
-  }
-  .menu-lateral {
-   display: none;
-  }
-  .principal {
-    margin-top: 0;
-    padding: 12px;
-    gap: 30px;
-  }
-  .bienvenida {
-    height: auto;
-    padding: 25px 15px;
-    border-radius: 25px;
-  }
-
-
-
-
-  .contenido-bienvenida {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-
-
-
-
-    gap: 20px;
-  }
-
-
-
-
-  .info-bienvenida {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-
-
-
-    gap: 20px;
-  }
-
-
-
-
-  .texto-bienvenida h1 {
-    margin: 0;
-    font-size: 28px;
-  }
-
-
-
-
-  .texto-bienvenida p {
-    font-size: 18px;
-    line-height: 1.5;
-    margin: 10px 0 0 0;
-  }
-
-
-
-
-  .imagen-bienvenida {
-    width: 100%;
-    max-width: 220px;
-    height: auto;
-    margin: 0;
-    object-fit: contain;
-  }
-  .acciones {
-    padding: 10px;
-  }
-
-
-
-
-  .acciones h1 {
-    text-align: center;
-    font-size: 40px;
-    margin-bottom: 20px;
-  }
-
-
-
-
-  .contenedor-acciones {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-
-
-
-  .accion {
-    width: 100%;
-    box-sizing: border-box;
-
-
-
-
-    background: white;
-    border-radius: 20px;
-    padding: 20px;
-  }
-
-
-
-
-  .accion a {
-    text-align: center;
-    font-size: 26px;
-  }
-  .accion p {
-    text-align: center;
-    font-size: 18px;
-    margin-top: 10px;
-  }
-  .contenido {
-    flex-direction: column;
-  }
-  .tabla-pedidos {
-    overflow-x: auto;
-  }
-  table {
-    min-width: 500px;
-  }
-  .acceso-rapido {
-    width: 100%;
-  }
-  .footer {
-    height: auto;
-    padding: 20px;
-  }
-
-
-
-
-  .redes {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-  }
-  .slider-bienvenida{
-    width: 220px;
-    height: 180px;
 }
+@media(max-width:768px){
+
+  .header{
+    padding:0 18px;
+  }
+  .logo{
+    font-size:1.6rem;
+  }
+  .hero{
+    padding:25px;
+  }
+  .hero-content{
+    flex-direction:column;
+    text-align:center;
+  }
+  .hero-left{
+    flex-direction:column;
+  }
+  .hero-text h1{
+    font-size:2rem;
+  }
+  .slider{
+    width:100%;
+    height:230px;
+  }
+  .cards{
+    grid-template-columns:1fr;
+  }
+  .orders{
+    overflow-x:auto;
+  }
+  table{
+    min-width:650px;
+  }
 }
-
-
-
-
+@media(max-width:500px){
+  .container{
+    padding:105px 14px 14px;
+  }
+  .hero-text h1{
+    font-size:1.7rem;
+  }
+  .profile-icon{
+    width:90px;
+    height:90px;
+    font-size:2.3rem;
+  }
+  .section-title{
+    font-size:1.5rem;
+  }
+}
 </style>
 </head>
 <body>
-
-
-<header class="encabezado">
-  <section class="natue"><h1>Natué</h1></section>
-  <nav>
-   <ul>
-   <li><a href="02.inicio.php">Inicio</a></li>
-   <li><a href="03.productos.php" >Cuidado</a></li>
-   <li><a href="04.productos2.php">Cosmeticos</a></li>
-   <li><a href="05.Acercade.php">Nosotros</a></li>
-   </ul>
-   </nav>
-  <section class="iconos">
-    <a href="fromclientes.php"><i class="fa-solid fa-user"></i> </a>
-   <a href="formulario.php"><i class="fa-solid fa-bag-shopping" style="margin-right: 20px;"></i></a>
-  </section>
+<header class="header">
+<div class="menu-toggle" id="menuToggle">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+  <div class="logo">Natué</div>
+  <nav class="nav">
+    <a href="#">Inicio</a>
+    <a href="#">Cuidado</a>
+    <a href="#">Cosméticos</a>
+    <a href="#">Nosotros</a>
+  </nav>
+  <div class="icons">
+    <a href="#"><i class="fa-solid fa-user"></i></a>
+    <a href="#"><i class="fa-solid fa-bag-shopping"></i></a>
+  </div>
 </header>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<aside class="menu-lateral">
-  <a class="menu-titulo"><h2>Menu Vendedor</h2></a>
-  <a href=""><i class="fa-solid fa-house"></i> Registrar Ventas</a>
-  <a href=""><i class="fa-solid fa-box"></i> Stock de Productos</a>
-  <a href=""><i class="fa-solid fa-truck"></i> Pedidos de Clientes</a>
-  <a href=""><i class="fa-solid fa-history"></i> Historial de Ventas</a>
-  <a href=""><i class="fa-solid fa-info-circle"></i> Estado de Pedidos</a>
-  <a href=""><i class="fa-solid fa-user"></i> Mi perfil</a>
-  <a href="">Cerrar Sesión</a>
-</aside>
-<main class="principal">
-    <section class="bienvenida">
-    <section class="contenido-bienvenida">
-      <section class="info-bienvenida">
-        <section class="icono-bienvenida">
-          <i class="fa-solid fa-user"></i>
-        </section>
-        <section class="texto-bienvenida">
-          <h1>Bienvenido/a</h1>
-          <p>
-           Haz que cada día sea una oportunidad para brillar.
-          </p>
-        </section>
+<div class="pepcuerpo">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-title">
+      Panel Vendedor
+    </div>
+    <div class="sidebar-links">
+      <a href="#"><i class="fa-solid fa-house"></i> Inicio</a>
+      <a href="#"><i class="fa-solid fa-cart-shopping"></i> Registrar Ventas</a>
+      <a href="#"><i class="fa-solid fa-box"></i> Stock Productos</a>
+      <a href="#"><i class="fa-solid fa-truck"></i> Pedidos</a>
+      <a href="#"><i class="fa-solid fa-clock-rotate-left"></i> Historial</a>
+      <a href="#"><i class="fa-solid fa-chart-column"></i> Estadísticas</a>
+      <a href="#"><i class="fa-solid fa-user"></i> Mi Perfil</a>
+      <a href="#" class="logout"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a>
+    </div>
+  </aside>
+  <main class="main">
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-left">
+          <div class="profile-icon">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div class="hero-text">
+            <h1>Bienvenido/a ✨</h1>
+            <p>
+              Haz que cada día sea una oportunidad para brillar.
+              Gestiona tus ventas, pedidos y productos desde un solo lugar.
+            </p>
+          </div>
+        </div>
+        <div class="slider">
+          <img src="natue.jpeg" class="slide">
+          <img src="nombre natue .jpeg" class="slide">
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2 class="section-title">Acciones Rápidas</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          <h3>Registrar Venta</h3>
+          <p>Registra nuevas ventas de productos rápidamente.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <i class="fa-solid fa-box"></i>
+          </div>
+          <h3>Ver Stock</h3>
+          <p>Consulta la disponibilidad actual de productos.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <i class="fa-solid fa-clipboard-list"></i>
+          </div>
+          <h3>Pedidos</h3>
+          <p>Consulta todos los pedidos de tus clientes.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <h3>Estadísticas</h3>
+          <p>Visualiza el crecimiento y rendimiento de ventas.</p>
+        </div>
+      </div>
+    </section>
+    <section class="pepe-grid">
+      <section class="orders">
+        <div class="orders-header">
+          <h2>Últimos Pedidos</h2>
+        </div>
+        <table>
+          <tr>
+            <th>Pedido</th>
+            <th>Cliente</th>
+            <th>Fecha</th>
+            <th>Estado</th>
+          </tr>
+          <tr>
+            <td>#COD12</td>
+            <td>María López</td>
+            <td>19/06/26</td>
+            <td><span class="status done">ENTREGADO</span></td>
+          </tr>
+          <tr>
+            <td>#COD13</td>
+            <td>Jessica Copa</td>
+            <td>04/03/26</td>
+            <td><span class="status pending">PENDIENTE</span></td>
+          </tr>
+          <tr>
+            <td>#COD14</td>
+            <td>Lucas Salazar</td>
+            <td>11/05/26</td>
+            <td><span class="status done">ENTREGADO</span></td>
+          </tr>
+        </table>
       </section>
-      <section class="slider-bienvenida">
-   <img src="./img/zbanner.png" class="imagen-slide active">
-   <img src="./img/nos.png" class="imagen-slide">
-</section>
+      <section class="quick">
+        <div class="quick-box">
+          <h2>Acceso Rápido</h2>
+          <button class="quick-btn">
+            Nuevo Pedido
+          </button>
+          <button class="quick-btn">
+            Ver Catálogo
+          </button>
+          <button class="quick-btn">
+            Reportes
+          </button>
+        </div>
+      </section>
     </section>
- </section>
-  <section class="acciones">
-    <h1>Acciones Rapidas</h1>
-    <section class="contenedor-acciones">
-  <section class="accion">
-    <div class="icono"><i class="fa-solid fa-cart-shopping"></i></div>
-    <a href="" style="color: #000000;">Registrar Venta</a>
-    <p><center>Registra nuevas ventas de productos</center></p>
-  </section>
-  <section class="accion">
-    <div class="icono"><i class="fa-solid fa-box"></i></div>
-    <a href="" style="color: #000000;">Ver Stock</a>
-    <p><center>Consulta el stock disponible de productos</center></p>
-  </section>
-  <section class="accion">
-    <div class="icono"><i class="fa-solid fa-clipboard-list"></i></div>
-    <a href="" style="color: #000000;">Ver Pedidos</a>
-    <p><center>Consulta los pedidos realizados por los clientes</center></p>
-  </section>
-  <section class="accion">
-    <div class="icono"><i class="fa-solid fa-arrows-rotate"></i></div>
-    <a href="" style="color: #000000;">Historial de Ventas</a>
-    <p><center>Consulta el historial de ventas realizadas</center></p>
-  </section>
+    <footer class="footer">
+      <h3>Síguenos en nuestras redes sociales hijuepichi :<</h3>
+      <div class="socials">
+        <a href="#"><i class="fa-solid fa-location-dot"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+    </footer>
+  </main>
+</div>
+<div class="overlay" id="overlay"></div>
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const sidebar = document.getElementById("sidebar");
+const overlay = document.getElementById("overlay");
 
+menuToggle.addEventListener("click", () => {
+  sidebar.classList.toggle("active");
+  overlay.classList.toggle("active");
+});
 
-
-
-
-
-
-
-  <section class="accion">
-    <div class="icono"><i class="fa-solid fa-chart-column"></i></div>
-    <a href="" style="color: #000000;">Estado de Pedidos </a>
-    <p><center>Consulta el estado de los pedidos</center></p>
-  </section>
-</section>
-  </section>
-</section>
-<section class="contenido">
-  <section class="pedidos">
-    <section class="encabezado-pedidos">
-      <a href="#ultimos-pedidos">
-        <h2>Últimos Pedidos</h2>
-      </a>
-    </section>
-    <section class="tabla-pedidos" id="ultimos-pedidos">
-      <table width="100%">
-        <tr>
-          <th>Pedido</th>
-          <th>Cliente</th>
-          <th>Fecha</th>
-          <th>Estado</th>
-        </tr>
-        <tr>
-          <td>#COD12</td>
-          <td>Maria Lopez</td>
-          <td>19/06/25</td>
-          <td style="color:green;">ENTREGADO</td>
-        </tr>
-        <tr>
-          <td>#COD13</td>
-          <td>Jessica Copa</td>
-          <td>04/03/26</td>
-          <td style="color:#d87093;">PENDIENTE</td>
-        </tr>
-      </table>
-    </section>
-  </section>
-  <section class="acceso-rapido">
-    <section class="encabezado-acceso">
-      <h2>Acceso Rápido</h2>
-    </section>
-    <section class="boton-acceso">
-      <a href="">Nuevo Pedido</a>
-    </section>
-    <section class="boton-acceso">
-      <a href="">Ver Catálogo</a>
-    </section>
-  </section>
-</section>
-</main>
-<footer class="footer">
-  Siguenos en nuestras redes sociales <br>
-  <section class="redes">
-    <a href=""><i class="fa-solid fa-location-dot"></i></a>
-    <a href=""><i class="fa-brands fa-facebook"></i></a>
-    <a href=""><i class="fa-brands fa-square-instagram"></i></a>
-    <a href=""><i class="fa-brands fa-twitter"></i></a>
-  </section>
-</footer>
+overlay.addEventListener("click", () => {
+  sidebar.classList.remove("active");
+  overlay.classList.remove("active");
+});
+</script>
 </body>
 </html>

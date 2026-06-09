@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Quicksand:wght@400;500&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
+  
 <style>
 body {  
   display: grid;
@@ -123,7 +123,6 @@ nav a.activo:after {
 
 
 @media (max-width: 768px) {
-
   header {
     padding: 20px;
     gap: 0px;
@@ -146,34 +145,28 @@ nav a.activo:after {
     flex-direction: row;
     gap: -100px;
 
-  }
-
-  .banner {
-    height: 600px;
-  }
-
-  .banner img {
-    width: 513px;
-    height: 660px;
-    object-fit: cover;
-    top: 600px;
-  }
-
-  .img-logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 150px;
-  top: 80px;
-  left: 150px;
- 
+  }.bloque{
+    flex-direction: column;
+    width: 90%;
+    padding: 20px;
+    gap: 20px;
+    align-items: center;
 }
 
-.img-logo img {
-  width: 250px;
-  height: 150px;
-  object-fit: contain;
+.bloque img{
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    left: 0;
+}
+
+.bloque-texto{
+    width: 100%;
+    left: 0;
+    font-size: 16px;
+    text-align: center;
 }}
+
   </style>
 </head>
 <body>

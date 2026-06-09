@@ -1,5 +1,5 @@
 <?php
-$servidor ="localhost";//Este archivo es para actualizar nuevos datos ingresados tras averlo editado
+$servidor ="localhost";
 $usuario ="root";
 $contra ="";
 $baseDeDatos ="DB_natue";

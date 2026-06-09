@@ -2,7 +2,7 @@
 $servidor ="localhost";
 $usuario ="root";
 $contra ="";
-$baseDeDatos ="db_natue";
+$baseDeDatos ="DB_natue";
 
 $conn = new mysqli($servidor, $usuario, $contra, $baseDeDatos);
 
@@ -21,7 +21,7 @@ $sql = "INSERT INTO usuario (CI, nombre, direccion, celular, rol, estado) VALUES
 
 if ($conn->query($sql) === TRUE) {
     echo "Nuevo usuario creado exitosamente";
-    header("Location: readUsuario.php");
+    header("Location: 08.usuario.php");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

@@ -24,6 +24,7 @@ body {
  gap: 10px;
 
 }
+
 header {
   grid-area: barra;
   background-color: #ffffffb5;
@@ -51,14 +52,12 @@ nav {
   gap: 40px;
   }
 
-
 nav ul {
   list-style: none;
   display: flex;
   gap: 25px;
 
   }
-
 
 
 nav a {
@@ -92,9 +91,6 @@ nav a.activo:after {
   position: relative;
   }
 
-
-
-
 h2 {
     font-size: 28px;
 }
@@ -102,8 +98,6 @@ h2 {
 h3{
     color: #000000;
 }
-
-
   
 .banner {
   grid-area: banner;
@@ -126,7 +120,6 @@ h3{
   height: 100px;
 
 }
-
 
  .caja-correo {
   position: absolute;
@@ -305,22 +298,12 @@ footer {
   transition: color 0.3s ease;
   }
 
-.carrusel{
-  width: 100%;
-  height: 800px;
-  display: flex;
-  overflow: hidden;
-}
-
-.carrusel img{
-  width: 100%;
-  animation: cambio 9s infinite;
-}
 
 
 @media (max-width: 768px) {
 
-  header {
+
+ header {
     padding: 20px;
     gap: 0px;
     height: 130px; 
@@ -328,92 +311,30 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+   
   }
 
   .iconos-barra {
     display: flex;
     flex-direction: row;
+ 
   }
 
   .iconos-barra a {
-      display: flex;
+    display: flex;
     flex-direction: row;
     gap: -100px;
+
   }
-
-  .banner {
-    height: 600px;
-  }
-
-  .banner img {
-    width: 513px;
-    height: 660px;
-    object-fit: cover;
-    top: 600px;
-  }
-
-  .img-logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 150px;
-  top: 80px;
-  left: 150px;
- 
-}
-
-.img-logo img {
-  width: 250px;
-  height: 150px;
-  object-fit: contain;
-}}
-
-
-
-
-
-@media (max-width: 768px) {
-
-
- 
-  header {
-    flex-direction: column;
-    padding: 15px;
-    height: auto;
-    gap: 15px;
-    text-align: center;
-  }
-
-
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-    padding: 0;
-    margin: 0;
-  }
-
-
-  nav {
-    width: 100%;
-    justify-content: center;
-  }
-
-
-  .iconos-barra {
-    gap: 20px;
-  }
-
 
   .carrusel {
     height: auto;
   }
 
-
   .banner-img {
     width: 100%;
     height: 400px;
   }
-
 
   .img-logo {
     width: 180px;
@@ -422,7 +343,6 @@ footer {
     margin: auto;
     background: transparent;
   }
-
 
   .img-logo img {
     width: 100%;
@@ -437,13 +357,11 @@ footer {
     box-sizing: border-box;
   }
 
-
   .input-correo {
     width: 70%;
     height: 50px;
     font-size: 15px;
   }
-
 
   .boton-enviar {
     width: 80px;
@@ -558,82 +476,64 @@ footer {
 
 
 </style>
+</head>
+
 
 <body>
 
-<header>
-  <div class="logo">
-  <h1>Natué</h1>
-  </div>
-
-
+  <header>
+    <div class="logo">
+    <h1>Natué</h1></div>
   <nav>
-   <ul>
-   <li><a href="02.inicio.php" class="activo">Inicio</a></li>
-   <li><a href="03.productos.php" >Cuidado</a></li>
-   <li><a href="04.productos2.php">Cosmeticos</a></li>
-   <li><a href="05.Acercade.php">Nosotros</a></li>
-   </ul>
+    <ul>
+    <li><a href="02.inicio.php" class="activo">Inicio</a></li>
+    <li><a href="03.productos.php" >Cuidado</a></li>
+    <li><a href="04.productos2.php">Cosmeticos</a></li>
+    <li><a href="05.Acercade.php">Nosotros</a></li>
+    </ul>
   </nav>
 
-
   <div class="iconos-barra">
-   <a href="09.register.php"><i class="fa-solid fa-user"></i> <span style="font-size:14px; margin-left:5px;"></span></a>
-   <a href="formProductos.php"><i class="fa-solid fa-bag-shopping"></i></a>
+    <a href="09.register.php"><i class="fa-solid fa-user"></i> <span style="font-size:14px; margin-left:5px;"></span></a>
+    <a href="formProductos.php"><i class="fa-solid fa-bag-shopping"></i></a>
   </div>
-</header>
+  </header>
 
 
-<section class="carrusel">
-   <img src="./img/banner4 - Copy.png" alt="Banner" class="banner-img" id="banner">
+  <section class="carrusel"><img src="./img/banner4 - Copy.png" alt="Banner" class="banner-img" id="banner">
+    <div class="caja-correo">
+    <input type="email" class="input-correo" placeholder="Ingresa tu Gmail">
+    <button class="boton-enviar">Enviar</button></div>
+  </section>
 
 
+  <div class="titulo-productos"><h2>Productos Destacados</h2></div>
 
-</div>
+  <section class="productos">
 
-     <div class="caja-correo">
-<input type="email" class="input-correo" placeholder="Ingresa tu Gmail">
-  <button class="boton-enviar">Enviar</button>
-
-  </div>
-</section>
-
-<div class="titulo-productos">
-  <h2>Productos Destacados</h2>
-</div>
-
-<section class="productos">
-  <div class="producto">
+    <div class="producto">
     <div class="rectangulo-titulo"><p><center>Crema Facial</center></p></div>
     <div class="cuadro-grande">
-      <img src="./img/zproducto1.jpg" alt="">
-    </div>
-    <div class="rectangulo-info"><center><p>Hidrata,protege y mantiene el equilibrio de la humedad del rostro para una piel saludable </p></center></div>
-  </div>
+    <img src="./img/zproducto1.jpg" alt=""></div>
+    <div class="rectangulo-info"><center><p>Hidrata,protege y mantiene el equilibrio de la humedad del rostro para una piel saludable </p></center></div></div>
 
-  <div class="producto">
+    <div class="producto">
     <div class="rectangulo-titulo"><p><center>Retinol</center></p></div>
     <div class="cuadro-grande">
-      <img src="./img/zproducto2.jpg" alt="">
-    </div>
-    <div class="rectangulo-info"><center><p>Reduce arrugas, manchas y acne mejorando la textura de la piel</p></center></div>
-  </div>
+    <img src="./img/zproducto2.jpg" alt=""></div>
+    <div class="rectangulo-info"><center><p>Reduce arrugas, manchas y acne mejorando la textura de la piel</p></center></div></div>
 
-  <div class="producto">
+    <div class="producto">
     <div class="rectangulo-titulo"><p><center>Crema Corporal </center></p></div>
     <div class="cuadro-grande">
-    <img src="./img/zproducto3.png" alt="">
-  </div>
-    <div class="rectangulo-info"><center><p>Hidrata, suaviza y protege la piel del cuerpo evitando resequedad para prevenir irritaciones </p></center></div>
-  </div>
+    <img src="./img/zproducto3.png" alt=""></div>
+    <div class="rectangulo-info"><center><p>Hidrata, suaviza y protege la piel del cuerpo evitando resequedad para prevenir irritaciones </p></center></div></div>
 
-  <div class="producto">
+    <div class="producto">
     <div class="rectangulo-titulo"><center><p>Base en polvo</p></center></div>
     <div class="cuadro-grande">
-    <img src="./img/zproducto4.png" alt="">
-  </div>
-    <div class="rectangulo-info"><center><p>Ayuda a unificar el tono de la piel, dando un acabado mate al rostro que cubre imperfecciones y sella el maquillaje liquido</p></center></div>
-  </div>
+    <img src="./img/zproducto4.png" alt=""></div>
+    <div class="rectangulo-info"><center><p>Ayuda a unificar el tono de la piel, dando un acabado mate al rostro que cubre imperfecciones y sella el maquillaje liquido</p></center></div></div>
 </section>
 
 
@@ -643,10 +543,8 @@ footer {
       Nuestro propósito es promover un estilo de vida sostenible, impulsando el cuidado
       personal que también protege el medio ambiente.
       Trabajamos para crear conciencia sobre el impacto de nuestras decisiones diarias
-      y fomentar prácticas que contribuyan al bienestar de las personas y del planeta.</p>
-  </div>
-
-  <img src="./img/nos.png" alt="Orgánico y natural" class="img-contenido">
+      y fomentar prácticas que contribuyan al bienestar de las personas y del planeta.</p></div>
+    <img src="./img/nos.png" alt="Orgánico y natural" class="img-contenido">
 </section>
 
 <footer>
@@ -666,4 +564,3 @@ footer {
 
 </body>
 </html>
-

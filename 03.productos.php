@@ -203,33 +203,28 @@ h3{
     gap: -100px;
 
   }
-
-  .banner {
-    height: 600px;
-  }
-
-  .banner img {
-    width: 513px;
-    height: 660px;
-    object-fit: cover;
-    top: 600px;
-  }
-
-  .img-logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 150px;
-  top: 80px;
-  left: 150px;
- 
+.caja{
+    gap: 15px;
+    padding: 10px;
+    margin-top:0px;
 }
 
-.img-logo img {
-  width: 250px;
-  height: 150px;
-  object-fit: contain;
+.producto{
+    min-width: 220px;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.producto img{
+    height: 250px;
+    border-radius: 12px;
+}
+
+.producto h3{
+    font-size: 14px;
 }}
+
+
 </style>
 </head>
 <body>
@@ -405,5 +400,3 @@ h3{
 
 </body>
 </html>
-
-

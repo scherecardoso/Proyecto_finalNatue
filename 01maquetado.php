@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 <style>
+
+
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
@@ -154,8 +156,6 @@ nav a.activo:after {
   background-color: #ff9d9d;
   }
 
-
-
 .contenido {
   grid-area: contenido;
   background-color: rgb(255, 255, 255);
@@ -180,7 +180,6 @@ nav a.activo:after {
   left: 90px;
   background-color: #eda5a5;
   }
-
 
 footer {
   grid-area: pie;
@@ -234,7 +233,8 @@ footer {
   margin-top: 15px;
   }
 
-  @media (max-width: 600px) {
+
+@media (max-width: 600px) {
 
   header {
     flex-direction: column;
@@ -243,33 +243,37 @@ footer {
     gap: 10px;
     flex-wrap: nowrap;
   }
-.logo h1 {
-  font-size: 20px;
+
+  .logo h1 {
+    font-size: 20px;
   }
 
-
-nav {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  }  nav ul {
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }  
+  
+  nav ul {
     flex-direction: column;
     gap: 3px;
     text-align: center;
   }
 
-nav a {
-  font-size: 11px;
+  nav a {
+    font-size: 11px;
   }
+
   .iconos-barra {
     justify-content: right;
     gap: 5px;
   }
 
   .iconos-barra a {
-  font-size: 10px;
+    font-size: 10px;
 
   }
+
   .banner {
     height: 300px;
   }
@@ -330,7 +334,6 @@ nav a {
 }
 </style>
 </head>
-
 <body>
 
 
