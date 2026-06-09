@@ -107,6 +107,12 @@ h2 {
     font-size: 28px;
 }
 
+
+h3 {
+    color:black;
+}
+
+
 #titulo1 { 
     grid-area: titulo1; 
 }
@@ -160,6 +166,7 @@ h2 {
     text-align: center;
     box-shadow: 0 4px 12px rgba(0,0,0,0.12);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color:black;
 }
 .producto:hover {
   transform: scale(1.05);
@@ -218,6 +225,8 @@ h2 {
 
 .producto h3{
     font-size: 14px;
+
+
 }}
 
 </style>

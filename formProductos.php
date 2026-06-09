@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if($_session[`user`]==null){
+        header("locatin:logUser.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
