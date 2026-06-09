@@ -2,7 +2,7 @@
 $servidor ="localhost";
 $usuario ="root";
 $contra ="";
-$baseDeDatos ="DB_natue";
+$baseDeDatos ="db_natue";
 
 $conn = new mysqli($servidor, $usuario, $contra, $baseDeDatos);
 
@@ -10,7 +10,7 @@ if ($conn->connect_error) {
     die("Conexion fallida: " . $conn->connect_error);
 }
 
-$codigo = $_POST['$codigo'];
+$codigo = $_POST['codigo'];
 $nombre = $_POST['nombre'];
 $descripcion = $_POST['descripcion'];
 $precio = $_POST['precio'];
