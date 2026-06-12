@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Quicksand:wght@400;500&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Iniciar Sesión</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Quicksand:wght@400;500&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.js"></script>
 
 <style>
 
@@ -18,24 +23,21 @@
 }
 
 body{
-    height:100vh;
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
     background:#f5f3f2;
 }
 
-
 .caja-login{
-    width:460px;
+    width:500px;
     background:white;
     padding:40px;
     border-radius:30px;
     box-shadow:0 10px 30px rgba(0,0,0,0.08);
-    border:1px solid #ececec;
-    margin-top:50px;
+    border:2px solid #f8c6e5;
 }
-
 
 .menu-login{
     display:flex;
@@ -56,157 +58,135 @@ body{
     padding-bottom:8px;
 }
 
-
 .titulo{
     text-align:center;
-    font-size:45px;
+    font-size:42px;
     font-family:serif;
     color:#222;
-    margin-bottom:10px;
+    margin-bottom:25px;
 }
 
-.subtitulo{
-    text-align:center;
-    color:#777;
-    margin-bottom:35px;
-}
-
-
-
-.campo{
+input{
     width:100%;
     height:58px;
-    border:1px solid #e5e5e5;
+    color:#777;
+    border:1px solid #f5a3d5;
     border-radius:40px;
-    display:flex;
-    align-items:center;
-    padding:0 20px;
-    margin-bottom:20px;
+    padding:20px;
+    margin-bottom:18px;
     background:#fafafa;
-}
-
-.campo i{
-    color:#999;
-    margin-right:10px;
-}
-
-.campo input{
-    width:100%;
-    border:none;
     outline:none;
-    background:transparent;
     font-size:15px;
 }
 
-
-
-.extra{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:25px;
-    font-size:14px;
-    color:#666;
+input::placeholder{
+    color:#777;
 }
 
-.extra a{
-    text-decoration:none;
-    color:#666;
-}
-
-
-.boton-login{
+button{
     width:100%;
     padding:16px;
-    border:none;
+    border:1px solid #f34bb3;
     border-radius:40px;
-    background:#d5ceca;
+    background:#f06ac3;
     color:white;
     font-size:17px;
     cursor:pointer;
+    margin-top:10px;
     transition:0.3s;
 }
 
-.boton-login:hover{
-    background:#c3bbb5;
+button:hover{
+    transform:scale(1.03);
+    background:#f765c6;
 }
 
-
-
-.linea{
-    text-align:center;
-    color:#888;
-    margin:30px 0 25px;
-    position:relative;
+label.error{
+    color:#a01045;
+    font-size:13px;
+    display:block;
+    margin-top:-10px;
+    margin-bottom:10px;
+    margin-left:15px;
 }
 
-.linea::before,
-.linea::after{
-    content:"";
-    width:35%;
-    height:1px;
-    background:#ddd;
-    position:absolute;
-    top:50%;
+input.error{
+    border:1px solid #a01045;
 }
 
-.linea::before{
-    left:0;
-}
+@media(max-width:768px){
 
-.linea::after{
-    right:0;
-}
+    .caja-login{
+        width:100%;
+        max-width:430px;
+        padding:30px;
+    }
 
+    .titulo{
+        font-size:35px;
+    }
 
+    input{
+        height:54px;
+    }
 
-.redes{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    margin-bottom:25px;
-}
-
-.redes a{
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    border:1px solid #ddd;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-decoration:none;
-    color:#333;
-    font-size:24px;
-}
-
-
-
-.registro{
-    text-align:center;
-    color:#666;
-}
-
-.registro a{
-    color:#444;
 }
 
 </style>
-
 </head>
 
 <body>
 
-<form class="caja-login" method="post">
+<form class="caja-login" method="post" id="iniciarsesion">
 
-    <div class="menu-login"><a href="login.php" class="activo">Iniciar sesión</a><a href="formUsuarios.php">Registrarse</a></div>
+    <div class="menu-login">
+        <a href="login.php" class="activo">Iniciar sesión</a>
+        <a href="formUsuarios.php">Registrarse</a>
+    </div>
+
     <h1 class="titulo">Bienvenida</h1>
-    <div class="campo">
-    <input type="email"name="correo"placeholder="Correo electrónico"required></div>
-    <div class="campo"><input type="password"name="password"placeholder="Contraseña"required></div>
-    <button type="submit" class="boton-login">Ingresar</button>
+
+    <input type="email" name="correo" placeholder="Correo electrónico" required>
+
+    <input type="password" name="password" placeholder="Contraseña" required>
+
+    <button type="submit">Ingresar</button>
+
 </form>
 
-</body>
+<script>
 
+$(document).ready(function(){
+
+    $("#iniciarsesion").validate({
+
+        rules:{
+            correo:{
+                required:true,
+                email:true
+            },
+            password:{
+                required:true,
+                minlength:6
+            }
+        },
+
+        messages:{
+            correo:{
+                required:"Por favor, ingresa tu correo electrónico",
+                email:"Por favor, ingresa un correo electrónico válido"
+            },
+            password:{
+                required:"Por favor, ingresa tu contraseña",
+                minlength:"La contraseña debe tener al menos 6 caracteres"
+            }
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
 </html>
